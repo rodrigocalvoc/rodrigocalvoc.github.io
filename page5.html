@@ -23,10 +23,17 @@
             border: none;
             cursor: pointer;
         }
+
+        footer{
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        }
     </style>
 </head>
 <body>
-    <div class="container mt-4">
+    <div class="container mt-4 mb-5">
         <h1>Almacenamiento de valores con el operador de asignación</h1>
         <p>En JavaScript, puedes almacenar un valor en una variable con el operador de asignación (<code>=</code>).</p>
         <pre>
@@ -54,35 +61,29 @@
             myNum = myVar;
         </pre>
         <p>Lo anterior declara una <code>myVar</code> variable sin valor y luego le asigna el valor 5. A continuación, se declara una variable denominada <code>myNum</code> sin valor. Luego, el contenido de <code>myVar</code> (que es 5) se asigna a la variable <code>myNum</code>. Ahora, <code>myNum</code> también tiene el valor de 5.</p>
-        <p>Asignar el contenido de <code>a</code> a la variable <code>b</code>.</p>
-        <pre>
-            var a;
-            a = 7;
+        <p class="lead font-italic text-danger font-weight-bold">Asignar el contenido de <code>a</code> a la variable <code>b</code>.</p>
+        <pre><strong>
+            var a; //no modificar
+            a = 7; //no modificar
+        </strong>
+        </pre>
+        <pre class="terminal">
             var b;
             b = a;
         </pre>
-    
-        <h1>Inicialización de variables con el operador de asignación</h1>
-        <p>Es común inicializar una variable a un valor inicial en la misma línea en que se declara.</p>
-        <pre>
-            var myVar = 0;
-        </pre>
-        <p>Crea una nueva variable llamada <code>myVar</code> y le asigna un valor inicial de 0.</p>
-        <p class="lead font-italic text-danger font-weight-bold">Defina una variable <code>a</code> con <code>var</code> e inicialícela con un valor de 9.</p>
-        <pre class="terminal">
-            var a = 9;
-        </pre>
         <button onclick="window.location.href='index.html'">Volver al Índice</button>
     
-    </div>
 
+    </div>
+ 
     <script>
-        var a = 9;
+        var b;
+        b = a;
     </script>
 
     <footer class="bg-body-tertiary text-center">
         
-        <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.08);">
+        <div class="text-center p-2" style="background-color: rgba(0, 0, 0, 0.08);">
           Página en mantenimiento:
        
       </footer>
