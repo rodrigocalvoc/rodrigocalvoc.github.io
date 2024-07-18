@@ -23,7 +23,6 @@
             border: none;
             cursor: pointer;
         }
-
         footer{
         position: fixed;
         bottom: 0;
@@ -61,24 +60,30 @@
             myNum = myVar;
         </pre>
         <p>Lo anterior declara una <code>myVar</code> variable sin valor y luego le asigna el valor 5. A continuación, se declara una variable denominada <code>myNum</code> sin valor. Luego, el contenido de <code>myVar</code> (que es 5) se asigna a la variable <code>myNum</code>. Ahora, <code>myNum</code> también tiene el valor de 5.</p>
-        <p class="lead font-italic text-danger font-weight-bold">Asignar el contenido de <code>a</code> a la variable <code>b</code>.</p>
-        <pre><strong>
-            var a; //no modificar
-            a = 7; //no modificar
-        </strong>
-        </pre>
-        <pre class="terminal">
+        <p>Asignar el contenido de <code>a</code> a la variable <code>b</code>.</p>
+        <pre>
+            var a;
+            a = 7;
             var b;
             b = a;
         </pre>
+    
+        <h1>Inicialización de variables con el operador de asignación</h1>
+        <p>Es común inicializar una variable a un valor inicial en la misma línea en que se declara.</p>
+        <pre>
+            var myVar = 0;
+        </pre>
+        <p>Crea una nueva variable llamada <code>myVar</code> y le asigna un valor inicial de 0.</p>
+        <p class="lead font-italic text-danger font-weight-bold">Defina una variable <code>a</code> con <code>var</code> e inicialícela con un valor de 9.</p>
+        <pre class="terminal">
+            var a = 9;
+        </pre>
         <button onclick="window.location.href='index.html'">Volver al Índice</button>
     
-
     </div>
- 
+
     <script>
-        var b;
-        b = a;
+        var a = 9;
     </script>
 
     <footer class="bg-body-tertiary text-center">
