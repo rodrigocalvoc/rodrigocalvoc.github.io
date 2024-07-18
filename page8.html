@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <title>Operador de Asignación en JavaScript</title>
+    <style>
+
+        .terminal {
+            background-color: black;
+            color: lime;
+            font-family: monospace;
+            padding: 10px;
+            border-radius: 5px;
+            white-space: pre-wrap;
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: blue;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-4">
+        <h1>Almacenamiento de valores con el operador de asignación</h1>
+        <p>En JavaScript, puedes almacenar un valor en una variable con el operador de asignación (<code>=</code>).</p>
+        <pre>
+            myVariable = 5;
+        </pre>
+        <p>Esto asigna el <code>Number</code> valor 5 a <code>myVariable</code>.</p>
+        <p>Si hay cálculos a la derecha del operador <code>=</code>, estos se realizan antes de que se asigne el valor a la variable a la izquierda del operador.</p>
+        <pre>
+            var myVar;
+            myVar = 5;
+        </pre>
+        <p>En primer lugar, este código crea una variable llamada <code>myVar</code>. Luego, el código asigna 5 a <code>myVar</code>. Ahora, si <code>myVar</code> aparece nuevamente en el código, el programa lo tratará como si fuera 5.</p>
+        <p>Asignar el valor 7 a la variable <code>a</code>.</p>
+        <pre>
+            var a;
+            a = 7;
+        </pre>
+        
+        <h1>Asignar el valor de una variable a otra</h1>
+        <p>Después de asignar un valor a una variable mediante el operador de asignación (<code>=</code>), puede asignar el valor de esa variable a otra variable mediante el operador de asignación.</p>
+        <pre>
+            var myVar;
+            myVar = 5;
+            var myNum;
+            myNum = myVar;
+        </pre>
+        <p>Lo anterior declara una <code>myVar</code> variable sin valor y luego le asigna el valor 5. A continuación, se declara una variable denominada <code>myNum</code> sin valor. Luego, el contenido de <code>myVar</code> (que es 5) se asigna a la variable <code>myNum</code>. Ahora, <code>myNum</code> también tiene el valor de 5.</p>
+        <p>Asignar el contenido de <code>a</code> a la variable <code>b</code>.</p>
+        <pre>
+            var a;
+            a = 7;
+            var b;
+            b = a;
+        </pre>
+    
+        <h1>Inicialización de variables con el operador de asignación</h1>
+        <p>Es común inicializar una variable a un valor inicial en la misma línea en que se declara.</p>
+        <pre>
+            var myVar = 0;
+        </pre>
+        <p>Crea una nueva variable llamada <code>myVar</code> y le asigna un valor inicial de 0.</p>
+        <p>Defina una variable <code>a</code> con <code>var</code> e inicialícela con un valor de 9.</p>
+        <pre>
+            var a = 9;
+        </pre>
+    
+        <h1>Declarar variables de cadena</h1>
+        <p>Anteriormente utilizaste el siguiente código para declarar una variable:</p>
+        <pre>
+            var myName;
+        </pre>
+        <p>Pero también puedes declarar una variable de cadena de esta manera:</p>
+        <pre>
+            var myName = "your name";
+        </pre>
+        <p><code>"your name"</code> se denomina literal de cadena. Un literal de cadena, o cadena, es una serie de cero o más caracteres encerrados entre comillas simples o dobles.</p>
+        <p>Cree dos nuevas variables de cadena: <code>myFirstName</code> y <code>myLastName</code> y asígneles los valores de su nombre y apellido, respectivamente.</p>
+        <pre>
+            var myFirstName = "TuNombre";
+            var myLastName = "TuApellido";
+        </pre>
+    
+        <h1>Comprensión de las variables no inicializadas</h1>
+        <p>Cuando se declaran variables de JavaScript, tienen un valor inicial de <code>undefined</code>. Si realiza una operación matemática en una variable <code>undefined</code>, el resultado será <code>NaN</code>, lo que significa "No es un número". Si concatena una cadena con una variable <code>undefined</code>, obtendrá una cadena de <code>undefined</code>.</p>
+        <p>Inicialice las tres variables <code>a</code>, <code>b</code>, y <code>c</code> con 5, 10, y "I am a" respectivamente para que no sean <code>undefined</code>.</p>
+        <pre>
+            var a = 5;
+            var b = 10;
+            var c = "I am a";
+        </pre>
+    
+        <h1>Explorar las diferencias entre las palabras clave <code>var</code> y <code>let</code></h1>
+        <p>Uno de los mayores problemas al declarar variables con la <code>var</code> palabra clave es que puedes sobrescribir fácilmente las declaraciones de variables:</p>
+        <pre>
+            var camper = "James";
+            var camper = "David";
+            console.log(camper);
+        </pre>
+        <p>En el código anterior, la <code>camper</code> variable se declara originalmente como James y luego se reemplaza por David. Luego, la consola muestra la cadena David.</p>
+        <p>En una aplicación pequeña, es posible que no te encuentres con este tipo de problema. Pero a medida que tu base de código se hace más grande, es posible que sobrescribas accidentalmente una variable que no era tu intención. Debido a que este comportamiento no genera un error, la búsqueda y reparación de errores se vuelve más difícil.</p>
+        <p>En ES6, una actualización importante de JavaScript, se introdujo una palabra clave llamada <code>let</code> para resolver este problema potencial con la <code>var</code> palabra clave.</p>
+        <p>Si reemplaza <code>var</code> con <code>let</code> en el código anterior, se producirá un error:</p>
+        <pre>
+            let camper = "James";
+            let camper = "David";
+        </pre>
+        <p>El error se puede ver en la consola de su navegador. Entonces, a diferencia de <code>var</code>, cuando se usa <code>let</code>, una variable con el mismo nombre solo se puede declarar una vez.</p>
+        <p>Actualice el código para que solo use la <code>let</code> palabra clave:</p>
+        <pre>
+            let camper = "James";
+            camper = "David";
+            console.log(camper);
+        </pre>
+    
+        <h1>Comprender la distinción entre mayúsculas y minúsculas en las variables</h1>
+        <p>En JavaScript, todos los nombres de funciones y variables distinguen entre mayúsculas y minúsculas, lo que significa que el uso de mayúsculas y minúsculas es importante.</p>
+        <p><code>MYVAR</code> no es lo mismo que <code>MyVar</code> ni <code>myvar</code>. Es posible tener múltiples variables distintas con el mismo nombre pero con diferente uso de mayúsculas y minúsculas. Se recomienda encarecidamente que, por razones de claridad, no utilice esta función del lenguaje.</p>
+        <h2>Mejores prácticas</h2>
+        <p>Escriba los nombres de las variables en JavaScript en camelCase. En camelCase, los nombres de variables de varias palabras tienen la primera palabra en minúscula y la primera letra de cada palabra subsiguiente en mayúscula.</p>
+        <p>Ejemplos:</p>
+        <pre>
+            var someVariable;
+            var anotherVariableName;
+            var thisVariableNameIsSoLong;
+        </pre>
+        <p class="lead font-italic text-danger font-weight-bold">Modifique las declaraciones y asignaciones existentes para que sus nombres utilicen camelCase. No cree ninguna variable nueva.</p>
+        <pre><strong>        
+            // Variable declarations
+            var StUdLyCapVaR;
+            var properCamelCase;
+            var TitleCaseOver;
+    
+            // Variable assignments
+            STUDLYCAPVAR = 10;
+            PRoperCAmelCAse = "A String";
+            tITLEcASEoVER = 9000;</strong></pre>
+        <pre class="terminal">
+            var studlyCapVar;
+            var properCamelCase;
+            var titleCaseOver;
+    
+            studlyCapVar = 10;
+            properCamelCase = "A String";
+            titleCaseOver = 9000;
+        </pre>
+        <button onclick="window.location.href='index.html'">Volver al Índice</button>
+    
+    </div>
+
+    <script>
+        var studlyCapVar;
+        var properCamelCase;
+        var titleCaseOver;
+    
+        studlyCapVar = 10;
+        properCamelCase = "A String";
+        titleCaseOver = 9000;
+    </script>
+        <footer class="bg-body-tertiary text-center">
+        
+        <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.08);">
+          Página en mantenimiento:
+       
+      </footer>
+
+</body>
+</html>

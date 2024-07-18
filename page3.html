@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <title>Operador de Asignación en JavaScript</title>
+    <style>
+        
+        .terminal {
+            background-color: black;
+            color: lime;
+            font-family: monospace;
+            padding: 10px;
+            border-radius: 5px;
+            white-space: pre-wrap;
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: blue;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        footer{
+            
+            width: 100%;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            }
+    </style>
+</head>
+<body>
+    <div class="container mt-4">
+        <h1>Almacenamiento de valores con el operador de asignación</h1>
+        <p>En JavaScript, puedes almacenar un valor en una variable con el operador de asignación (<code>=</code>).</p>
+        <pre>
+            myVariable = 5;
+        </pre>
+        <p>Esto asigna el valor 5 a <code>myVariable</code>.</p>
+        <p>Si hay cálculos a la derecha del operador <code>=</code>, estos se realizan antes de que se asigne el valor a la variable a la izquierda del operador.</p>
+        <pre>
+            var myVar;
+            myVar = 5;
+        </pre>
+        <p>En primer lugar, este código crea una variable llamada <code>myVar</code>. Luego, el código asigna 5 a <code>myVar</code>. Ahora, si <code>myVar</code> aparece nuevamente en el código, el programa lo tratará como si fuera 5.</p>
+        <p class="lead font-italic text-danger font-weight-bold">Asignar el valor 7 a la variable <code>a</code>.</p>
+        <pre class="terminal">
+            var a;
+            a = 7;
+        </pre>
+        <button onclick="window.location.href='index.html'">Volver al Índice</button>
+    </div>
+
+    <script>
+        var a;
+        a = 7;
+    </script>
+    
+    <footer class="bg-body-tertiary text-center">
+        
+        <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.08);">
+          Página en mantenimiento:
+       
+      </footer>
+
+</body>
+</html>
