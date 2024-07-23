@@ -20,30 +20,18 @@
         <img src="FreeCodeCamp_logo.jpg" alt="Banner" height="600">
     </div>
 
-
-    
-    
     <div class="container mt-4 p-3 bg-light mb-5">
-
-
-    
-            <div class="text-center mb-4">
-    
-                <h2>Filtrar por dificultad</h2>
-    
-                <div class="btn-group" role="group" aria-label="Filtro de dificultad">
-    
-                    <a href="faciles.html" class="btn btn-success">Fáciles</a>
-    
-                    <a href="medio.html" class="btn btn-warning">Intermedios</a>
-    
-                    <a href="dificiles.html" class="btn btn-danger">Difíciles</a>
-    
-                </div>
-    
+        <div class="text-center mb-4">
+            <h2>Filtrar por dificultad</h2>
+            <div class="btn-group" role="group" aria-label="Filtro de dificultad">
+                <a href="faciles.html" class="btn btn-success">Fáciles</a>
+                <a href="medio.html" class="btn btn-warning">Intermedios</a>
+                <a href="dificiles.html" class="btn btn-danger">Difíciles</a>
             </div>
+        </div>
         <h1>Índice</h1>
-        <ul>
+        <ul id="exercise-list">
+
             <li class="li mt-1"><a href="page1.html">Ejercicio 1</a></li>
             <li class="li mt-1"><a href="page2.html">Ejercicio 2</a></li>
             <li class="li mt-1"><a href="page3.html">Ejercicio 3</a></li>
@@ -159,18 +147,53 @@
             <li class="li mt-1"><a href="page10.html">Ejercicio 113</a></li>
 
             
-
-
         </ul>
+
+        <nav>
+            <ul id="pagination" class="pagination justify-content-center"></ul>
+        </nav>
     </div>
 
     <footer class="bg-body-tertiary text-center mt-2">
-        
         <div class="text-center p-2" style="background-color: rgba(0, 0, 0, 0.08);">
-          Página en mantenimiento:
-       
-      </footer>
+            Página en mantenimiento:
+        </div>
+    </footer>
 
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const itemsPerPage = 10;
+            const listItems = document.querySelectorAll("#exercise-list li");
+            const totalPages = Math.ceil(listItems.length / itemsPerPage);
+            const pagination = document.querySelector("#pagination");
 
+            function showPage(page) {
+                listItems.forEach((item, index) => {
+                    item.style.display = (index >= (page - 1) * itemsPerPage && index < page * itemsPerPage) ? "block" : "none";
+                });
+                updatePagination(page);
+            }
+
+            function updatePagination(currentPage) {
+                pagination.innerHTML = "";
+                for (let i = 1; i <= totalPages; i++) {
+                    const li = document.createElement("li");
+                    li.className = "page-item " + (i === currentPage ? "active" : "");
+                    const a = document.createElement("a");
+                    a.className = "page-link";
+                    a.href = "#";
+                    a.textContent = i;
+                    a.addEventListener("click", function(e) {
+                        e.preventDefault();
+                        showPage(i);
+                    });
+                    li.appendChild(a);
+                    pagination.appendChild(li);
+                }
+            }
+
+            showPage(1);
+        });
+    </script>
 </body>
 </html>
